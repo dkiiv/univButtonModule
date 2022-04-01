@@ -28,16 +28,16 @@ void loop() {
   button2 = digitalRead(22);
   button3 = digitalRead(23);
   button4 = digitalRead(24);
-  if (button1){
+  if (button1) {
     buttonState = 1;
   }
-  if (button2){
+  if (button2) {
     buttonState = 2;
   }
-  if (button3){
+  if (button3) {
     buttonState = 3;
   }
-  if (button4){
+  if (button4) {
     buttonState = 4;
   }
   else {

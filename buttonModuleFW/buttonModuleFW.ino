@@ -12,7 +12,7 @@ void setup() {
   pinMode(23, INPUT);
   pinMode(24, INPUT);
   while (!Serial);
-  Serial.begin(115200);
+  Serial.begin(9600);
   
   mcp2515.reset();
   mcp2515.setBitrate(CAN_500KBPS);
@@ -36,6 +36,7 @@ void loop() {
   mcp2515.sendMessage(&canMsg1);
 
   Serial.println("Messages sent");
+  Serial.println(noButton);
   
   delay(100);
 }

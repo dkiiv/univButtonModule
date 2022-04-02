@@ -1,7 +1,7 @@
 #include <mcp_can.h>
 #include <SPI.h>
-unsigned char heartBeat[2] = {0, 1};
-unsigned char buttonState[5] = {0, 1, 2, 3, 4};
+unsigned char heartBeat = 1;
+unsigned char buttonState = 0;
 int button1 = 0;
 int button2 = 0;
 int button3 = 0;
@@ -13,7 +13,6 @@ MCP_CAN CAN(SPI_CS_PIN); // Set CS pin
 
 void setup()
 {
-    heartBeat[1];
     pinMode(21, INPUT);
     pinMode(22, INPUT);
     pinMode(23, INPUT);
@@ -36,19 +35,19 @@ void loop()
     button3 = digitalRead(23);
     button4 = digitalRead(24);
     if (button1) {
-      buttonState[1];
+      unsigned char buttonState = 1;
     }
     if (button2) {
-      buttonState[2];
+      unsigned char buttonState = 2;
     }
     if (button3) {
-      buttonState[3];
+      unsigned char buttonState = 3;
     }
     if (button4) {
-      buttonState[4];
+      unsigned char buttonState = 4;
     }
     else {
-      buttonState[0];
+      unsigned char buttonState = 0;
     }
     CAN.sendMsgBuf(0x210, 0, 1, heartBeat);
     CAN.sendMsgBuf(0x210, 1, 5, buttonState);

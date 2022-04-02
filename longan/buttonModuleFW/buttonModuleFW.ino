@@ -35,6 +35,7 @@ void loop() {
   if (digitalRead(23)) buttonState = 0x3; else noButton += 1;
   if (digitalRead(24)) buttonState = 0x4; else noButton += 1;
   if (noButton >= 4) buttonState = 0x0;
-    CAN.sendMsgBuf(0x210, 0, 5, univACC);
-    delay(100);                       // send data per 100ms
+
+  CAN.sendMsgBuf(0x210, 0, 5, univACC);
+  delay(100);                       // send data per 100ms
 }

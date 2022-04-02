@@ -11,8 +11,6 @@ void setup() {
   pinMode(22, INPUT);
   pinMode(23, INPUT);
   pinMode(24, INPUT);
-  while (!Serial);
-  Serial.begin(9600);
   
   mcp2515.reset();
   mcp2515.setBitrate(CAN_500KBPS);
